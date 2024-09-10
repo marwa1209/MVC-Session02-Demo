@@ -15,17 +15,28 @@ namespace MVC_Session02_Demo.Net8.Controllers
            // result.ContentType = "text/html" ;
           //  result.ContentType = "object/pdf" ;
             return result; }
-        public RedirectToActionResult Test(string id)
+        //public RedirectToActionResult Test(string id)
+        //{
+        //    RedirectToActionResult result = new RedirectToActionResult("GetMovie", "Movies",new {id});
+        //    return result;
+        //}
+        //public RedirectResult Test01(string id)
+        //{
+        //    RedirectResult result = new RedirectResult("https://www.facebook.com");
+        //    return result;
+        //}
+        public ActionResult Test(string id)
         {
-            RedirectToActionResult result = new RedirectToActionResult("GetMovie", "Movies",new {id});
+            RedirectToActionResult result = new RedirectToActionResult("GetMovie", "Movies", new { id });
             return result;
         }
-        public RedirectResult Test01(string id)
+        public ActionResult Test01(string id)
         {
             RedirectResult result = new RedirectResult("https://www.facebook.com");
             return result;
         }
-
+        //all action data types inherit from ActionResult
+        //all of the implement iActionResult
         #endregion
     }
 }
