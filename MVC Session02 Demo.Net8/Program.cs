@@ -14,7 +14,7 @@ namespace MVC_Session02_Demo.Net8
             app.MapGet("/", () => "Hello World!");
             //app.MapGet("/signin", signin)
             //routing constraints
-            app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Test}/{id:int=1}");
+            app.MapControllerRoute(name: "default", pattern: "{controller=Movies}/{action=Test}/{id:int=1}");
             app.Run();
         }
         //static string signin()
