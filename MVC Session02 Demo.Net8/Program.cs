@@ -10,6 +10,7 @@ namespace MVC_Session02_Demo.Net8
          //   builder.Services.AddRazorPages();//register the built-in Razor Pages services in the container
            // builder.Services.AddMvc();//register the built-in ALL WEB SERVICES in the container
             var app = builder.Build();
+            app.UseStaticFiles();//Middle Ware
 
             app.MapGet("/", () => "Hello World!");
             //app.MapGet("/signin", signin)
