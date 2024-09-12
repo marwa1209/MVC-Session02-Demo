@@ -11,11 +11,11 @@ namespace MVC_Session02_Demo.Net8
            // builder.Services.AddMvc();//register the built-in ALL WEB SERVICES in the container
             var app = builder.Build();
             app.UseStaticFiles();//Middle Ware
-
-            app.MapGet("/", () => "Hello World!");
+            //if empty go to HomeController
+            app.MapGet("/", () => Results.Redirect("/Home/Index"));     
             //app.MapGet("/signin", signin)
             //routing constraints
-            app.MapControllerRoute(name: "default", pattern: "{controller=Movies}/{action=Test}/{id:int=1}");
+            app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}");
             app.Run();
         }
         //static string signin()
