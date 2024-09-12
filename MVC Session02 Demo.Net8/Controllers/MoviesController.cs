@@ -10,11 +10,12 @@ namespace MVC_Session02_Demo.Net8.Controllers
         //public string Test() { return "Default"; }
         #region Action Return Type
         //Actions Has Special Data Types
-        public ContentResult GetMovie(string id) {  ContentResult result = new ContentResult();
-            result.Content = $"id={id}";
-           // result.ContentType = "text/html" ;
-          //  result.ContentType = "object/pdf" ;
-            return result; }
+        //public ContentResult GetMovie(string id) {  ContentResult result = new ContentResult();
+        //    result.Content = $"id={id}";
+        //   // result.ContentType = "text/html" ;
+        //  //  result.ContentType = "object/pdf" ;
+        //    return result; 
+        //}
         //public RedirectToActionResult Test(string id)
         //{
         //    RedirectToActionResult result = new RedirectToActionResult("GetMovie", "Movies",new {id});
@@ -25,15 +26,38 @@ namespace MVC_Session02_Demo.Net8.Controllers
         //    RedirectResult result = new RedirectResult("https://www.facebook.com");
         //    return result;
         //}
-        public ActionResult Test(string id)
+        //public ActionResult Test(string id)
+        //{
+        //    RedirectToActionResult result = new RedirectToActionResult("GetMovie", "Movies", new { id });
+        //    return result;
+        //}
+        //public ActionResult Test01(string id)
+
+        //{
+        //    RedirectResult result = new RedirectResult("https://www.facebook.com");
+        //    return result;
+        //}
+        [HttpGet]
+        [ActionName("test")]
+        public IActionResult Test(string id)
         {
             RedirectToActionResult result = new RedirectToActionResult("GetMovie", "Movies", new { id });
             return result;
         }
-        public ActionResult Test01(string id)
+        public IActionResult Test01(string id)
+
         {
-            RedirectResult result = new RedirectResult("https://www.facebook.com");
-            return result;
+            //RedirectResult result = new RedirectResult("https://www.facebook.com");
+            //return result;
+            return Redirect("https://www.facebook.com");
+        }
+        public IActionResult GetMovie(string id)
+        {
+          //  ContentResult result = new ContentResult();
+           // result.Content = $"id={id}";
+            // result.ContentType = "text/html" ;
+            //  result.ContentType = "object/pdf" ;
+            return Content($"id={id}", "object/pdf");
         }
         //all action data types inherit from ActionResult
         //all of the implement iActionResult
