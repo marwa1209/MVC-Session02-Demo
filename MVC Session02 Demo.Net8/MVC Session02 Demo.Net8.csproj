@@ -7,4 +7,8 @@
     <RootNamespace>MVC_Session02_Demo.Net8</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
 </Project>
