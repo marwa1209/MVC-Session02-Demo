@@ -15,7 +15,8 @@
                 <div class="flex">
                     <!-- Logo -->
                     <div class="shrink-0 flex items-center">
-                        <a href="/Home/Index" class="text-xl font-bold text-gray-800">MVC PROJECT</a>
+                        @Html.ActionLink("MVC PROJECT", "Index", "Home",null, new { @class = "text-xl font-bold text-gray-800"})
+                        <!--  <a href="/Home/Index" class="text-xl font-bold text-gray-800">MVC PROJECT</a>-->
                     </div>
                     <!-- Links -->
                     <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
